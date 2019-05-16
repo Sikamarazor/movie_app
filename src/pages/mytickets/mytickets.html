@@ -1,0 +1,34 @@
+<!--
+  Generated template for the MyticketsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon style="color:rgb(0,0,0);" name="menu"></ion-icon>
+    </button>
+    <ion-title>Cinema Application</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list text-left id="menu-list1" class="menu-size">
+    <div *ngFor="let x of tickets">
+      <ion-item text-left color="none" menuClose="" (click)="viewMovie(x)" id="menu-list-item1">
+        <ion-avatar item-start>
+          <img src="{{x.picUrl}}">
+        </ion-avatar>
+        <h2>Movie name : <b>{{x.name}}</b></h2>
+        <p>{{x.category2}}</p>
+      </ion-item>
+
+    </div>
+  </ion-list>
+
+  <div *ngIf="length == null">
+    <p style="color:red; text-align:center;">No tickets</p>
+  </div>
+</ion-content>

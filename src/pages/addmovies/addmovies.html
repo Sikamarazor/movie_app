@@ -1,0 +1,71 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon style="color:rgb(0,0,0);" name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <div class="navImg">
+        <img alt="logo" height="40" src="./assets/imgs/VOUCHER24/voucherlogo3.png">
+      </div>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-item class="register-input">
+    <ion-input class="inputemail" type="text" placeholder="Name" [(ngModel)]="mname"></ion-input>
+  </ion-item>
+  <br>
+<ion-item class="register-input">
+  <ion-input class="inputemail" type="text" placeholder="Description" [(ngModel)]="description"></ion-input>
+</ion-item>
+<br>
+<ion-item class="register-input">
+  <ion-input class="inputemail" type="text" placeholder="Parental rating" [(ngModel)]="rating"></ion-input>
+</ion-item>
+<br>
+<ion-item class="register-input">
+  <ion-input class="inputemail" type="text" placeholder="Opening date" [(ngModel)]="openingDate"></ion-input>
+</ion-item>
+<br>
+<ion-item class="register-input">
+  <ion-input class="inputemail" type="text" placeholder="length" [(ngModel)]="length"></ion-input>
+</ion-item>
+<br>
+  <ion-item text-wrap id="registration-select1" class="register-input">
+    <ion-label stacked>
+      Cat 1
+    </ion-label>
+    <ion-select text-wrap class="select-font" (ionChange)="selMovie($event)" text-wrap>
+      <ion-option text-wrap *ngFor="let x of cat " [value]="x.category">
+        {{x.category}}
+      </ion-option>
+    </ion-select>
+  </ion-item>
+  <br>
+<ion-item text-wrap id="registration-select1" class="register-input">
+  <ion-label stacked>
+    Category
+  </ion-label>
+<ion-select text-wrap class="select-font" (ionChange)="selectCat($event)" text-wrap>
+    <ion-option text-wrap *ngFor="let x of cat2 " [value]="x.category2">
+      {{x.category2}}
+    </ion-option>
+  </ion-select>
+</ion-item>
+<br>
+<ion-item text-wrap id="registration-select1" class="register-input">
+  <ion-input type="file" class="form-control" id="pwd" (change)="logoUpload($event)"></ion-input>
+</ion-item>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button class="makeP" (click)="addMovie()" ion-button block>Add</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
